@@ -1,0 +1,247 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+:root {
+    --fs-normal: 14px;
+    --fs-h2: 36px;
+    --fs-number: 16px;
+    --fs-maintitle: 48px;
+    --fs-titlecard: 24px;
+    --fs-money: 21px;
+    --fs-titlepink: 18px;
+    --fs-titlelist: 16px;
+    --fs-end: 12px;
+    --pink-500: #F13C6E;
+    --grey-800: #333333;
+    --grey-900: #000;
+    --white: #fff;
+    --grey-400: #C4C4C4;
+    --grey-600: #828282;
+    --gray-200: #EFEFEF;
+    --grey-300: #828282;
+    --container-width: 1110px;
+    --container-space: 25px;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    max-width: calc(var(--container-width) + var(--container-space) * 2);
+    width: 100%;
+    padding: 0 var(--container-space);
+    margin: 0 auto;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+ }
+.flex {
+    display: flex;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+.justify-between {
+    justify-content: space-between;
+}
+  
+.justify-center {
+    justify-content: center;
+}
+  
+.items-center {
+    align-items: center;
+}
+
+.grow-1 {
+    flex-grow: 1;
+}
+
+.margin-auto {
+    margin: 0 auto;
+}
+
+.gap-15 {
+    gap: 15px;
+}
+
+
+.page-wrap { 
+    position: relative; 
+    min-height: 100vh; 
+} 
+.page-front { 
+    position: relative; 
+    z-index: 10; 
+    flex-direction: column; 
+    width: 100%; 
+} 
+.video-back { 
+    position: absolute; 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    object-position: center; 
+} 
+.header { 
+    width: 100%; 
+    background-color: var(--grey-800); 
+} 
+.link { 
+    text-decoration: none; 
+    color: var(--grey-400); 
+    display: inline-block; 
+    transition: all 0.3s ease; 
+    cursor: pointer; 
+} 
+.nav-wrap > li:hover { 
+    background-color: blue; 
+    color: var(--grey-900); 
+} 
+.nav-wrap { 
+    list-style: none; 
+} 
+.nav-wrap > li { 
+    padding: 20px; 
+    position: relative; 
+    transition: all 0.3s ease; 
+} 
+ 
+.nav-wrap > li:hover .nav-nested-arrow::after { 
+    transform: rotate(0deg); 
+} 
+.nav-nested-wrap { 
+    position: absolute; 
+    z-index: 1000; 
+    left: 0; 
+    width: 100%; 
+    list-style: none; 
+    visibility: hidden; 
+    opacity: 0; 
+    transform: translateX(-3px); 
+} 
+ 
+.nav-nested-item { 
+    width: 100%; 
+    display: inline-block; 
+    padding: 20px; 
+    background: blue; 
+    cursor: pointer; 
+} 
+.nav-nested-item:hover { 
+    background-color: white; 
+} 
+ 
+.nav-wrap > li:hover .nav-nested-wrap { 
+    display: block; 
+    visibility: visible; 
+    opacity: 1; 
+    transform: translateX(0); 
+    transition: all 0.3s ease; 
+} 
+.nav-nested-arrow::after, .nav-nested-arrow::before { 
+    content: ""; 
+    position: absolute; 
+    width: 100%; 
+    height: 1px; 
+    background: var(--white); 
+    display: inline-block; 
+    top: 50%; 
+    transition: all 0.3s ease; 
+} 
+ 
+.nav-nested-arrow { 
+    position: relative; 
+    width: 10px; 
+    height: 10px; 
+    display: inline-block; 
+} 
+.nav-nested-arrow::after { 
+    transform: rotate(90deg); 
+} 
+ 
+ 
+ 
+ 
+.nav-nested-arrow, 
+.nav-sub-nested-arrow { 
+  position: relative; 
+  width: 10px; 
+  height: 10px; 
+  display: inline-block; 
+} 
+ 
+.nav-wrap > li:hover .nav-nested-arrow::after { 
+  transform: rotate(0deg); 
+} 
+ 
+.nav-nested-wrap > li:hover .nav-sub-nested-arrow::after { 
+  transform: rotate(0deg); 
+}
+
+
+  
+
+/*new new*/
+
+.nav-nested-arrow::after,
+.nav-nested-arrow::before,
+.nav-sub-nested-arrow::after,
+.nav-sub-nested-arrow::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background: var(--white);
+  display: inline-block;
+  top: 50%;
+  transition: all 0.3s ease;
+}
+
+.nav-sub-nested-arrow::after,
+.nav-sub-nested-arrow::before {
+  background: black;
+}
+
+.nav-nested-arrow::after,
+.nav-sub-nested-arrow::after {
+  transform: rotate(90deg);
+}
+
+.nav-nested-wrap > li {
+  position: relative;
+}
+
+.sub-nav-nested-wrap {
+  position: absolute;
+  z-index: 100;
+  left: 100%;
+
+  list-style: none;
+  top: 0;
+  width: max-content;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(10px);
+  visibility: hidden;
+}
+
+.nav-nested-wrap > li:hover .sub-nav-nested-wrap {
+  opacity: 1;
+  transform: translateX(0);
+  visibility: visible;
+}
+
+.sub-nav-nested-wrap .link {
+  padding: 20px 50px;
+  background: slateblue;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.sub-nav-nested-wrap .link:hover {
+  background: white;
+  color: slateblue;
+}
